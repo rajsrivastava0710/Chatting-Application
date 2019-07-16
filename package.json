@@ -1,0 +1,16 @@
+{
+  "name": "Real Time Chat",
+  "version": "1.0.0",
+  "description": "Chat App using Node and Socket.io",
+  "main": "server.js",
+  "scripts": {
+    
+  },
+  "author": "Raj",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "socket.io": "^2.2.0"
+  }
+}
