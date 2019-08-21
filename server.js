@@ -6,7 +6,7 @@ var app =express();
 
 var server=app.listen(3000,function () {
 
-    console.log("listening to request on port 3000");
+    console.log("COnnected to the server");
 });
 
 app.use(express.static('public'));

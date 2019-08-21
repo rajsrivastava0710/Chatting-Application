@@ -8,7 +8,7 @@ var output   =document.querySelector('#output');
 var notify   =document.querySelector('#notify');
 
 
-var name=prompt("ENter name");
+var name=prompt("Enter name");
 
 if(name.length!=0){
 handle.value=name;
@@ -19,10 +19,15 @@ else{
 setInterval(function(){
   if(handle.value=='null'){
     handle.value='Anonymous';
+    welcome.innerHTML='Welcome to this world : '+'Anonymous';
+  }
+  else if(handle.value=='rj7ishere'){
+    welcome.innerHTML='Welcome to your world ADMIN';
+  }
+  else{
+    welcome.innerHTML='Welcome to this world : '+handle.value.toUpperCase();
   }
 },10);
-
-welcome.innerHTML='Welcome to this world : '+handle.value.toUpperCase();
 
 btn.addEventListener('click',function () {
     if(message.value.length>0)
@@ -55,10 +60,10 @@ socket.on('chat',function (data) {
         if(msgoutput[i].handle=='rj7ishere')
         {
 
-            output.innerHTML+='<p style="color: yellow; font-size: 140%"><strong>'+" ADMIN "+':</strong><b>'+msgoutput[i].message+'</b></p>';
+            output.innerHTML+='<p style="color: #e50015; font-size: 140%"><strong>'+" ADMIN "+':</strong><b>'+' '+msgoutput[i].message+'</b></p>';
         }
         else{
-            output.innerHTML+='<p><strong style="color: red">'+msgoutput[i].handle.toUpperCase()+':</strong>'+" <i>"+msgoutput[i].message+'</i></p>';
+            output.innerHTML+='<p><strong style="color: red;font-size:110%;">'+msgoutput[i].handle.toUpperCase()+' '+': </strong>'+"<i style='color:blue;font-size:110%;'>"+'  '+msgoutput[i].message+'</i></p>';
         }
 
     }
